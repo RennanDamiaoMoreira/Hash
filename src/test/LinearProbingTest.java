@@ -1,49 +1,54 @@
 package test;
 
-import com.sun.tools.javac.Main;
 import model.Chaining;
+import model.LinearProbing;
 
-public class ChainingTest {
+public class LinearProbingTest {
     public static void main(String[] args) {
-        Chaining teste = new Chaining(4);
+        LinearProbing teste = new LinearProbing(5);
         teste.gerarRepresentacao();
-        teste.addValue("Rennan");
+        teste.add("Rennan");
         teste.gerarRepresentacao();
-        teste.addValue("Vinicius");
+        teste.add("Vinicius");
         teste.gerarRepresentacao();
-        teste.addValue("Adailton");
+        teste.add("Adailton");
         teste.gerarRepresentacao();
-        teste.addValue("Falci");
+        teste.add("Falci");
         teste.gerarRepresentacao();
-        teste.addValue("Matuzinho");
+        teste.add("Matuzinho");
         teste.gerarRepresentacao();
-        teste.addValue("Jabour");
+        teste.add("Jabour");
         teste.gerarRepresentacao();
-        teste.addValue("Daves");
+        /*teste.add("Daves");
         teste.gerarRepresentacao();
-        teste.addValue("Ariane");
+        teste.add("Ariane");
         teste.gerarRepresentacao();
-        teste.addValue("Oliveira");
+        teste.add("Oliveira");
         teste.gerarRepresentacao();
-        teste.addValue("Juventus");
+        teste.add("Juventus");
         teste.gerarRepresentacao();
-        teste.addValue("Alex");
+        teste.add("Alex");
         teste.gerarRepresentacao();
-        teste.addValue("Melman");
+        teste.add("Melman");
         teste.gerarRepresentacao();
-        teste.addValue("Glória");
+        teste.add("Glória");
         teste.gerarRepresentacao();
-        teste.addValue("Marti");
+        teste.add("Marti");
         teste.gerarRepresentacao();
-        teste.searchValue("Jabour");
-        teste.removeValue("Jabour");
+
+        teste.add("ABECEDARIO");
         teste.gerarRepresentacao();
-        teste.removeValue("Alex");
+        teste.searchObject("ABECEDARIO");*/
+        teste.remove("Falci");
+        teste.gerarRepresentacao();
+        teste.add("Marti");
+        teste.gerarRepresentacao();
+        /*teste.removeValue("Alex");
         teste.gerarRepresentacao();
         teste.removeValue("Ariane");
         teste.gerarRepresentacao();
         teste.removeValue("Ariane");
         teste.gerarRepresentacao();
-        teste.searchValue("Jabour");
+        teste.searchValue("Jabour");*/
     }
 }
