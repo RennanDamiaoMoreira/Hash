@@ -40,6 +40,7 @@ public class LinearProbingTest {
         teste.gerarRepresentacao();
         teste.searchObject("ABECEDARIO");*/
         teste.remove("Falci");
+        teste.remove("Rennan");
         teste.gerarRepresentacao();
         teste.add("Marti");
         teste.gerarRepresentacao();
