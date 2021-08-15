@@ -1,6 +1,5 @@
 package model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +96,7 @@ public class LinearProbing {
         if (position>=0){
             list[position][0]=null;
             list[position][1]=null;
-            organizar();
+           organizar();
         }
     }
 
@@ -107,8 +106,30 @@ public class LinearProbing {
             if (list[i][0]==null||list[i][0].isBlank()){
                 list[i][1]=null;
                 positions.add(i);
-        }}
-            System.out.println(positions.size()+"   posicoes livre ");
+            }
+        }
+        for(int i = 0 ;i<tamanho;i++){
+            if(list[i][1]!=null&&Integer.parseInt(list[i][1])!=i){
+                System.out.println("O elemento da posicao"+i+" deveria ser realocado ");
+                Object obj = null;
+                for(Object elem : positions){
+                    System.out.println((int)elem);
+                    if ((int)elem<i &&(int)elem>=Integer.parseInt(list[i][1]) ){
+                        System.out.println("Entrou aqui");
+                        System.out.println("Posicao    "+i+" Para "+(int)elem );
+                        list[(int)elem][0]=list[i][0];
+                        list[(int)elem][1]=list[i][1];
+                        list[i][0]=null;
+                        list[i][1]=null;
+                        obj = elem;
+                        break;
+                    }
+                }
+                if (obj!=null){
+                    positions.remove(obj);
+                }
+            }
+        }
     }
 
 

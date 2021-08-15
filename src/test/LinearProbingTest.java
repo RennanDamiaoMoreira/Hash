@@ -5,7 +5,7 @@ import model.LinearProbing;
 
 public class LinearProbingTest {
     public static void main(String[] args) {
-        LinearProbing teste = new LinearProbing(5);
+        LinearProbing teste = new LinearProbing(16);
         teste.gerarRepresentacao();
         teste.add("Rennan");
         teste.gerarRepresentacao();
@@ -19,7 +19,7 @@ public class LinearProbingTest {
         teste.gerarRepresentacao();
         teste.add("Jabour");
         teste.gerarRepresentacao();
-        /*teste.add("Daves");
+        teste.add("Daves");
         teste.gerarRepresentacao();
         teste.add("Ariane");
         teste.gerarRepresentacao();
@@ -38,8 +38,9 @@ public class LinearProbingTest {
 
         teste.add("ABECEDARIO");
         teste.gerarRepresentacao();
-        teste.searchObject("ABECEDARIO");*/
+        teste.searchObject("ABECEDARIO");
         teste.remove("Falci");
+        teste.remove("Rennan");
         teste.gerarRepresentacao();
         teste.add("Marti");
         teste.gerarRepresentacao();
