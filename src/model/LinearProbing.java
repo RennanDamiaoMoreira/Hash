@@ -97,40 +97,19 @@ public class LinearProbing {
         if (position>=0){
             list[position][0]=null;
             list[position][1]=null;
-           // organizar();
+            organizar();
         }
     }
 
     private void organizar() {
         List positions = new ArrayList<Integer>();
-        for (int i = 0 ; i<tamanho;i++){
-            if (list[i][0].isBlank()||list[i][0]==null||list[i][1].isBlank()||list[i][1]==null){
+        for (int i = 0; i<tamanho;i++){
+            if (list[i][0]==null||list[i][0].isBlank()){
+                list[i][1]=null;
                 positions.add(i);
-            }
-        }
-        for (int i = 0 ;i<tamanho ; i++){
-            if (!list[i][1].equals(String.valueOf(i))){
-                if (i < Integer.parseInt(list[i][1])) {
-                    int positionOriginal=Integer.parseInt(list[i][1]);
-                    List ideal=positionsIdeals(positionOriginal,positions);
-
-                }
-
-            }
-        }
+        }}
+            System.out.println(positions.size()+"   posicoes livre ");
     }
 
-    private List positionsIdeals(int positionOriginal,List references) {
-       /*List positions = new ArrayList();
-        for (int i = 0 ; i<references.size();i++){
-           if (references.get(i)<=positionOriginal){
-               positions.add(references.get(i));
-           }else {
-               return positions;
-           }
-       }*/
-
-        return null;
-    }
 
 }
