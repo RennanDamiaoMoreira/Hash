@@ -35,24 +35,13 @@ public class LinearProbing {
     }
 
     private int find(String value, int position) {
-        if (list[position][0]!=null&&list[position][1].equals(value)){
-            return position;
-        }
-        for (int i =position+1; i<tamanho;i++){
+        for (int i =0; i<tamanho;i++){
             if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
                 if (list[i][0].equals(value)){
                     return i;
                 }
             }
-        }
-        for (int i =0; i<position;i++){
-            if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
-                if (list[i][0].equals(value)){
-                    return i;
-                }
-            }
-        }
-        return -1;
+        }return -1;
     }
 
     public void add(String value){
