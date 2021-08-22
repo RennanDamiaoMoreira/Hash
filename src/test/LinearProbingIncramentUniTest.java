@@ -1,11 +1,11 @@
 package test;
 
-import model.Chaining;
-import model.LinearProbing;
 
-public class LinearProbingTest {
+import model.LinearProbingIncrementUni;
+
+public class LinearProbingIncramentUniTest {
     public static void main(String[] args) {
-        LinearProbing teste = new LinearProbing(16);
+        LinearProbingIncrementUni teste = new LinearProbingIncrementUni(16,2);
         teste.gerarRepresentacao();
         teste.add("Rennan");
         teste.gerarRepresentacao();
