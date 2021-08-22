@@ -35,7 +35,7 @@ public class LinearProbing {
     }
 
     private int find(String value, int position) {
-        if (list[position][0]!=null&&list[position][1].equals(value)){
+        if (list[position][0]!=null&&list[position][0].equals(value)){
             return position;
         }
         for (int i =position+1; i<tamanho;i++){
