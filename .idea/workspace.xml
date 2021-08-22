@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4c48d2a2-0d04-41a2-946c-ef17109de90c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/LinearProbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LinearProbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/LinearProbingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/LinearProbingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/LinearProbingIncrementUni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LinearProbingIncrementUni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/LinearProbingIncramentUniTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/LinearProbingIncramentUniTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +44,26 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test" />
+      <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LinearProbingTest">
+  <component name="RunManager" selected="Application.LinearProbingIncramentUniTest">
     <configuration name="ChainingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.ChainingTest" />
       <module name="Hash" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinearProbingIncramentUniTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.LinearProbingIncramentUniTest" />
+      <module name="Hash" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -68,6 +83,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LinearProbingIncramentUniTest" />
         <item itemvalue="Application.LinearProbingTest" />
         <item itemvalue="Application.ChainingTest" />
       </list>
@@ -89,6 +105,7 @@
       <workItem from="1629037807018" duration="32000" />
       <workItem from="1629037985868" duration="6147000" />
       <workItem from="1629586063336" duration="4239000" />
+      <workItem from="1629655876432" duration="4537000" />
     </task>
     <servers />
   </component>

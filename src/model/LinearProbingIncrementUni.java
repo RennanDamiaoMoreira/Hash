@@ -3,14 +3,16 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LinearProbing {
+public class LinearProbingIncrementUni {
     public String list [][];//frist position = value, second position = key reference;
     public int tamanho ;
+    public int salto;
     public String returnText;
 
-    public LinearProbing( int tamanho) {
+    public LinearProbingIncrementUni(int tamanho,int salto) {
         this.list = new String[tamanho][2];
         this.tamanho = tamanho;
+        this.salto = salto;
     }
 
     private int getPosition(String value) {
@@ -35,13 +37,26 @@ public class LinearProbing {
     }
 
     private int find(String value, int position) {
-        for (int i =0; i<tamanho;i++){
+        if (list[position][0]!=null&&list[position][1].equals(value)){
+            return position;
+        }
+        int i =position+salto;
+        for (; i<tamanho;i+=salto){
             if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
                 if (list[i][0].equals(value)){
                     return i;
                 }
             }
-        }return -1;
+        }
+        i=i-tamanho;
+        for (; i<position;i+=salto){
+            if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
+                if (list[i][0].equals(value)){
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     public void add(String value){
@@ -55,7 +70,8 @@ public class LinearProbing {
             returnText=null;
             return;
         }
-        for (int i = posicao ; i<tamanho;i++){
+        int i = posicao+salto;
+        for (; i<tamanho;i+=salto){
             returnText+="Posição ocupada, avaliando a próxima\n";
             if(list[i][0]==null||list[i][0].isBlank()){
                 list[i][0]=value;
@@ -66,8 +82,11 @@ public class LinearProbing {
                 return;
             }
         }
-        returnText+="Fim da tabela, retornando no início\n";
-        for (int i = 0 ; i<posicao;i++){
+        returnText+="Fim da tabela, retornando no início\n"+"i="+i;
+
+        i = i-tamanho;
+        returnText+="  i novo= "+i  +"\n";
+        for (; i<posicao;i+=salto){
             returnText+="Posição ocupada, avaliando a próxima\n";
             if(list[i][0]==null||list[i][0].isBlank()){
                 list[i][0]=value;
