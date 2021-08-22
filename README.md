@@ -4,7 +4,7 @@ Fazer um programa que, a partir de uma chave inteira k, faça inserção, busca 
 
 O tratamento de colisões deve ser feito segundo as seguintes técncicas:
 - Chaining. in progress -- complete
-- Linear Probing.
+- Linear Probing. --complete
 - Linear Probing fixed increment bidirecional. (Rennan)
 - Double hashing. (Vinícius)
 - Linear Probing duas direções.
