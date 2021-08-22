@@ -37,7 +37,7 @@ public class LinearProbingIncrementUni {
     }
 
     private int find(String value, int position) {
-        if (list[position][0]!=null&&list[position][1].equals(value)){
+        if (list[position][0]!=null&&list[position][0].equals(value)){
             return position;
         }
         int i =position+salto;
@@ -122,8 +122,6 @@ public class LinearProbingIncrementUni {
             for (int i = 0; i < tamanho; i++) {
                 organizar();
             }
-
-
             System.out.println("O elemento "+value+" Foi removido");
         }else{
             System.out.println("elemento nao encontrado");
@@ -143,17 +141,19 @@ public class LinearProbingIncrementUni {
                 //System.out.println("O elemento da posicao"+i+" deveria ser realocado proximo a "+list[i][1]);
                 Object obj = null;
                 for(Object elem : positions){
-                   // System.out.println(elem);
-                    if (Integer.valueOf((Integer) elem)>=Integer.valueOf(list[i][1]) ){ // se a posicao livre fica mais proximo da posicao certa
-                        if ((i-Integer.valueOf((Integer) elem)>0)) {// se a posicao livre fica mais proximo da posicao certa em relacao ao elemento.
-                            //System.out.println("Entrou aqui");
-                            System.out.println("Posicao    " + i + " Para " + (int) elem);
-                            list[(int) elem][0] = list[i][0];
-                            list[(int) elem][1] = list[i][1];
-                            list[i][0] = null;
-                            list[i][1] = null;
-                            obj = elem;
-                            break;
+                    //System.out.println(elem);
+                    if (Integer.valueOf((Integer) elem)-Integer.valueOf(list[i][1])==0||Integer.valueOf((Integer) elem)-Integer.valueOf(list[i][1])%salto==0) { // se a posicao livre pertence ao salto em relacao a posicao certa
+                        if (Integer.valueOf((Integer) elem) >= Integer.valueOf(list[i][1])) { // se a posicao livre fica mais proximo da posicao certa
+                            if ((i - Integer.valueOf((Integer) elem) > 0)||i<Integer.valueOf(list[i][1])) {// se a posicao livre fica mais proximo da posicao certa em relacao ao elemento.
+                                //System.out.println("Entrou aqui");
+                                //System.out.println("Posicao    " + i + " Para " + (int) elem);
+                                list[(int) elem][0] = list[i][0];
+                                list[(int) elem][1] = list[i][1];
+                                list[i][0] = null;
+                                list[i][1] = null;
+                                obj = elem;
+                                break;
+                            }
                         }
                     }
                 }

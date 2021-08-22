@@ -33,15 +33,15 @@ public class LinearProbingIncramentUniTest {
         teste.gerarRepresentacao();
         teste.add("Glória");
         teste.gerarRepresentacao();
-        teste.add("Marti");
-        teste.gerarRepresentacao();
+        //teste.add("Marti");
+        //teste.gerarRepresentacao();
 
-        teste.add("ABECEDARIO");
+        //teste.add("ABECEDARIO");
         teste.gerarRepresentacao();
         teste.searchObject("ABECEDARIO");
         teste.remove("Falci");
         teste.gerarRepresentacao();
-        teste.remove("Rennan");
+       /* teste.remove("Rennan");
         teste.gerarRepresentacao();
         teste.add("Marti");
         teste.gerarRepresentacao();
@@ -50,7 +50,7 @@ public class LinearProbingIncramentUniTest {
         teste.remove("Ariane");
         teste.gerarRepresentacao();
         teste.remove("Ariane");
-        teste.gerarRepresentacao();
+        teste.gerarRepresentacao();*/
 
     }
 }
