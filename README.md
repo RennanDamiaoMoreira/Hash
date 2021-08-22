@@ -8,7 +8,7 @@ O tratamento de colisões deve ser feito segundo as seguintes técncicas:
 - Linear Probing fixed increment bidirecional. (Rennan)
 - Double hashing. (Vinícius)
 - Linear Probing duas direções.
-- Linear Probing fixed increment unidirecional.
+- Linear Probing fixed increment unidirecional. -- complete
 
 Em todos os casos, na exclusão, não se pode usar a técnica de marcar a posição com "A" (Available), ou seja, tem que "arrumar" a tabela na hora da exclusão (ou remoção).
 CASO JULGUEM NECESSÁRIO, PODE SIM. CONVERSEM COMIGO PARA DEFINIRMOS.

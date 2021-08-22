@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4c48d2a2-0d04-41a2-946c-ef17109de90c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/LinearProbingIncrementUni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LinearProbingIncrementUni.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/LinearProbingIncramentUniTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/LinearProbingIncramentUniTest.java" afterDir="false" />
     </list>
@@ -47,7 +46,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LinearProbingIncramentUniTest">
+  <component name="RunManager" selected="Application.LinearProbingTest">
     <configuration name="ChainingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.ChainingTest" />
       <module name="Hash" />
@@ -83,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LinearProbingIncramentUniTest" />
         <item itemvalue="Application.LinearProbingTest" />
+        <item itemvalue="Application.LinearProbingIncramentUniTest" />
         <item itemvalue="Application.ChainingTest" />
       </list>
     </recent_temporary>
@@ -105,7 +104,7 @@
       <workItem from="1629037807018" duration="32000" />
       <workItem from="1629037985868" duration="6147000" />
       <workItem from="1629586063336" duration="4239000" />
-      <workItem from="1629655876432" duration="4537000" />
+      <workItem from="1629655876432" duration="7163000" />
     </task>
     <servers />
   </component>
