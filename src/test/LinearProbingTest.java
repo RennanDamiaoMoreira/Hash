@@ -40,16 +40,17 @@ public class LinearProbingTest {
         teste.gerarRepresentacao();
         teste.searchObject("ABECEDARIO");
         teste.remove("Falci");
+        teste.gerarRepresentacao();
         teste.remove("Rennan");
         teste.gerarRepresentacao();
         teste.add("Marti");
         teste.gerarRepresentacao();
-        /*teste.removeValue("Alex");
+        teste.remove("Alex");
         teste.gerarRepresentacao();
-        teste.removeValue("Ariane");
+        teste.remove("Ariane");
         teste.gerarRepresentacao();
-        teste.removeValue("Ariane");
+        teste.remove("Ariane");
         teste.gerarRepresentacao();
-        teste.searchValue("Jabour");*/
+
     }
 }

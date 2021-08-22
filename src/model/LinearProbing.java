@@ -22,6 +22,7 @@ public class LinearProbing {
         returnText+="\n\nTotal = "+charCode+"\n key == "+charCode%tamanho+"\n\n\n";
         return charCode%tamanho;
     }
+
     public void gerarRepresentacao(){
          returnText = "";
         for (int i = 0 ; i<tamanho;i++){
@@ -35,7 +36,7 @@ public class LinearProbing {
 
     private int find(String value, int position) {
         for (int i =0; i<tamanho;i++){
-            if(list[i][1].equals(String.valueOf(position))){
+            if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
                 if (list[i][0].equals(value)){
                     return i;
                 }
@@ -83,6 +84,7 @@ public class LinearProbing {
 
 
     }
+
     public void searchObject(String value){
         int position = getPosition(value);
         if (find(value,position)>=0){
@@ -91,12 +93,21 @@ public class LinearProbing {
             System.out.println("Elemento não encontrado");
         }
     }
+
     public void remove(String value){
+
         int position = find(value, getPosition(value));
         if (position>=0){
             list[position][0]=null;
             list[position][1]=null;
-           organizar();
+            for (int i = 0; i < tamanho; i++) {
+                organizar();
+            }
+
+
+            System.out.println("O elemento "+value+" Foi removido");
+        }else{
+            System.out.println("elemento nao encontrado");
         }
     }
 
@@ -110,19 +121,21 @@ public class LinearProbing {
         }
         for(int i = 0 ;i<tamanho;i++){
             if(list[i][1]!=null&&Integer.parseInt(list[i][1])!=i){
-                System.out.println("O elemento da posicao"+i+" deveria ser realocado ");
+                //System.out.println("O elemento da posicao"+i+" deveria ser realocado proximo a "+list[i][1]);
                 Object obj = null;
                 for(Object elem : positions){
-                    System.out.println((int)elem);
-                    if ((int)elem<i &&(int)elem>=Integer.parseInt(list[i][1]) ){
-                        System.out.println("Entrou aqui");
-                        System.out.println("Posicao    "+i+" Para "+(int)elem );
-                        list[(int)elem][0]=list[i][0];
-                        list[(int)elem][1]=list[i][1];
-                        list[i][0]=null;
-                        list[i][1]=null;
-                        obj = elem;
-                        break;
+                   // System.out.println(elem);
+                    if (Integer.valueOf((Integer) elem)>=Integer.valueOf(list[i][1]) ){ // se a posicao livre fica mais proximo da posicao certa
+                        if ((i-Integer.valueOf((Integer) elem)>0)) {// se a posicao livre fica mais proximo da posicao certa em relacao ao elemento.
+                            //System.out.println("Entrou aqui");
+                            System.out.println("Posicao    " + i + " Para " + (int) elem);
+                            list[(int) elem][0] = list[i][0];
+                            list[(int) elem][1] = list[i][1];
+                            list[i][0] = null;
+                            list[i][1] = null;
+                            obj = elem;
+                            break;
+                        }
                     }
                 }
                 if (obj!=null){
