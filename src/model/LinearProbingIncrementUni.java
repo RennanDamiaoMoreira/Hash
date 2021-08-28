@@ -143,6 +143,7 @@ public class LinearProbingIncrementUni {
                     if (list[i][2]!=null&&!list[i][2].isBlank()){
                         for(int j = 0 ; j<Integer.parseInt(list[i][2]);j++){
                             int newPosition = ((Integer.parseInt(list[i][1])+(j*salto))%tamanho);
+<<<<<<< HEAD
                                 if (newPosition==(Integer)position){
                                     list[newPosition][0]=list[i][0];
                                     list[newPosition][1]=list[i][1];
@@ -153,6 +154,18 @@ public class LinearProbingIncrementUni {
                                     obj=position;
                                     break;
                                 }
+=======
+                            if (newPosition==(Integer)position){
+                                list[newPosition][0]=list[i][0];
+                                list[newPosition][1]=list[i][1];
+                                list[newPosition][2]=String.valueOf(j);
+                                list[i][0] = null;
+                                list[i][1] = null;
+                                list[i][2] = null;
+                                obj=position;
+                                break;
+                            }
+>>>>>>> main
                         }
                     }
                 }
