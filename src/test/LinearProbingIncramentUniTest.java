@@ -10,12 +10,12 @@ public class LinearProbingIncramentUniTest {
         teste.add("Rennan");
         teste.gerarRepresentacao();
         teste.add("Rennan");teste.gerarRepresentacao();
-        teste.add("Rennan");teste.gerarRepresentacao();
-        teste.add("Rennan");teste.gerarRepresentacao();
-        teste.add("Rennan");teste.gerarRepresentacao();
-        teste.add("Rennan");teste.gerarRepresentacao();
-        teste.add("Rennan");teste.gerarRepresentacao();
-        teste.add("Rennan");
+        teste.add("nanneR");teste.gerarRepresentacao();
+        teste.add("nnaeRn");teste.gerarRepresentacao();
+//        teste.add("Rennan");teste.gerarRepresentacao();
+//        teste.add("Rennan");teste.gerarRepresentacao();
+//        teste.add("Rennan");teste.gerarRepresentacao();
+//        teste.add("Rennan");
 //        teste.gerarRepresentacao();
 //        teste.add("Vinicius");
 //        teste.gerarRepresentacao();
@@ -45,9 +45,13 @@ public class LinearProbingIncramentUniTest {
         //teste.gerarRepresentacao();
 
         //teste.add("ABECEDARIO");
+
+        //teste.add("nnaeRn");teste.gerarRepresentacao();
         teste.gerarRepresentacao();
-        teste.searchObject("ABECEDARIO");
-        teste.remove("Falci");
+        teste.searchObject("nnaeRn");
+        teste.remove("nanneR");
+        teste.gerarRepresentacao();
+        teste.remove("Rennan");
         teste.gerarRepresentacao();
        /* teste.remove("Rennan");
         teste.gerarRepresentacao();
