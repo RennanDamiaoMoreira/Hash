@@ -3,14 +3,14 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LinearProbingIncrementUni {
-    public String list [][];//frist position = value, second position = key reference, third position = factorMultiplex;
+public class LinearProbingIncrementBi {
+    public String list [][];//frist position = value, second position = key reference;
     public int tamanho ;
     public int salto;
     public String returnText;
 
-    public LinearProbingIncrementUni(int tamanho,int salto) {
-        this.list = new String[tamanho][3];
+    public LinearProbingIncrementBi(int tamanho, int salto) {
+        this.list = new String[tamanho][2];
         this.tamanho = tamanho;
         this.salto = salto;
     }
@@ -62,8 +62,6 @@ public class LinearProbingIncrementUni {
     public void add(String value){
         returnText="String == "+value+"\n";
         int posicao = getPosition(value);
-        int multiplex=0;
-        ArrayList<Integer> posicoesPercorridas=new ArrayList<>();
         if(list[posicao][0]==null||list[posicao][0].isBlank()){
             list[posicao][0]=value;
             list[posicao][1]=String.valueOf(posicao) ;
@@ -72,30 +70,33 @@ public class LinearProbingIncrementUni {
             returnText=null;
             return;
         }
-        do {
-           multiplex++;
-           int newPosition = ((posicao+(multiplex*salto))%tamanho);
-           if(posicoesPercorridas.contains(newPosition)){
-               returnText+="A procura entrou em LOOP , error";
-               System.out.println(returnText);
-               returnText=null;
-               return;
-           }
-            if(list[newPosition][0]==null||list[newPosition][0].isBlank()){
-                list[newPosition][0]=value;
-                list[newPosition][1]=String.valueOf(posicao) ;
-                list[newPosition][2]=String.valueOf(multiplex) ;
-
-                returnText+="String add na posicao "+newPosition+"\n";
+        int i = posicao+salto;
+        for (; i<tamanho;i+=salto){
+            returnText+="Posição ocupada, avaliando a próxima\n";
+            if(list[i][0]==null||list[i][0].isBlank()){
+                list[i][0]=value;
+                list[i][1]=String.valueOf(posicao);
+                returnText+="string add na posicao"+i+"\n";
                 System.out.println(returnText);
                 returnText=null;
                 return;
             }
-            posicoesPercorridas.add(newPosition);
-        }while (posicoesPercorridas.size()!=tamanho);
+        }
+        returnText+="Fim da tabela, retornando no início\n"+"i="+i;
 
-
-
+        i = i-tamanho;
+        returnText+="  i novo= "+i  +"\n";
+        for (; i<posicao;i+=salto){
+            returnText+="Posição ocupada, avaliando a próxima\n";
+            if(list[i][0]==null||list[i][0].isBlank()){
+                list[i][0]=value;
+                list[i][1]=String.valueOf(posicao);
+                returnText+="string add na posicao"+i+"\n";
+                System.out.println(returnText);
+                returnText=null;
+                return;
+            }
+        }
         returnText+="Não foi encontrado posicao livre, error";
         System.out.println(returnText);
         returnText=null;
