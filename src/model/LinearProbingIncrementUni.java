@@ -142,7 +142,7 @@ public class LinearProbingIncrementUni {
                 if (list[i][1]!=null&&Integer.parseInt(list[i][1])!=i){
                     if (list[i][2]!=null&&!list[i][2].isBlank()){
                         for(int j = 0 ; j<Integer.parseInt(list[i][2]);j++){
-                            int newPosition = ((Integer.parseInt(list[i][1])+(j*salto))%tamanho);
+                            int newPosition = getPositionRelative((Integer.parseInt(list[i][1])),j);
                             if (newPosition==(Integer)position){
                                     list[newPosition][0]=list[i][0];
                                     list[newPosition][1]=list[i][1];
