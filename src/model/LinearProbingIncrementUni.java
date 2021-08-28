@@ -45,7 +45,7 @@ public class LinearProbingIncrementUni {
 
         do {
             multiplex++;
-            int newPosition = ((position+(multiplex*salto))%tamanho);
+            int newPosition = getPositionRelative(position,multiplex);
             if(posicoesPercorridas.contains(newPosition)){
                 return -1;
             }
@@ -74,7 +74,7 @@ public class LinearProbingIncrementUni {
         }
         do {
            multiplex++;
-           int newPosition = ((posicao+(multiplex*salto))%tamanho);
+           int newPosition =getPositionRelative(posicao,multiplex);
            if(posicoesPercorridas.contains(newPosition)){
                returnText+="A procura entrou em LOOP , error";
                System.out.println(returnText);
@@ -164,5 +164,8 @@ public class LinearProbingIncrementUni {
         }
     }
 
+    private int getPositionRelative(int positionInitial,int multiplex){
+        return ((positionInitial+(multiplex*salto))%tamanho);
+    }
 
 }
