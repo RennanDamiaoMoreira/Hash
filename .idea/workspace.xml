@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c48d2a2-0d04-41a2-946c-ef17109de90c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/LinearProbingIncrementBi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/LinearProbingIncrementUni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LinearProbingIncrementUni.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/LinearProbingIncramentUniTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/LinearProbingIncramentUniTest.java" afterDir="false" />
@@ -109,6 +108,7 @@
       <workItem from="1629757774001" duration="705000" />
       <workItem from="1630011555600" duration="2077000" />
       <workItem from="1630168523577" duration="3440000" />
+      <workItem from="1630180001128" duration="5740000" />
     </task>
     <servers />
   </component>

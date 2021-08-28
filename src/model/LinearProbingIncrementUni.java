@@ -29,7 +29,7 @@ public class LinearProbingIncrementUni {
          returnText = "";
         for (int i = 0 ; i<tamanho;i++){
             returnText = returnText +i+"|";
-            returnText= returnText+"=="+ list[i][0]+" == "+list[i][1] ;
+            returnText= returnText+"=="+ list[i][0]+" == "+list[i][1]+" == "+list[i][2] ;
             returnText=returnText +"\n";
         }
         System.out.println(returnText);
@@ -37,25 +37,24 @@ public class LinearProbingIncrementUni {
     }
 
     private int find(String value, int position) {
+        int multiplex=0;
+        ArrayList<Integer> posicoesPercorridas = new ArrayList<>();
         if (list[position][0]!=null&&list[position][0].equals(value)){
             return position;
         }
-        int i =position+salto;
-        for (; i<tamanho;i+=salto){
-            if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
-                if (list[i][0].equals(value)){
-                    return i;
-                }
+
+        do {
+            multiplex++;
+            int newPosition = ((position+(multiplex*salto))%tamanho);
+            if(posicoesPercorridas.contains(newPosition)){
+                return -1;
             }
-        }
-        i=i-tamanho;
-        for (; i<position;i+=salto){
-            if(list[i][0]!=null&&list[i][1].equals(String.valueOf(position))){
-                if (list[i][0].equals(value)){
-                    return i;
-                }
+            if (list[newPosition][0]!=null&&list[newPosition][1].equals(String.valueOf(position))&&list[newPosition][0].equals(value)){
+                return newPosition;
             }
-        }
+            posicoesPercorridas.add(newPosition);
+        }while (posicoesPercorridas.size()!=tamanho);
+
         return -1;
     }
 
@@ -67,6 +66,7 @@ public class LinearProbingIncrementUni {
         if(list[posicao][0]==null||list[posicao][0].isBlank()){
             list[posicao][0]=value;
             list[posicao][1]=String.valueOf(posicao) ;
+            list[posicao][2]=String.valueOf(0);
             returnText+="Posição certa livre, string add\n";
             System.out.println(returnText);
             returnText=null;
@@ -118,6 +118,7 @@ public class LinearProbingIncrementUni {
         if (position>=0){
             list[position][0]=null;
             list[position][1]=null;
+            list[position][2]=null;
             for (int i = 0; i < tamanho; i++) {
                 organizar();
             }
@@ -135,30 +136,29 @@ public class LinearProbingIncrementUni {
                 positions.add(i);
             }
         }
-        for(int i = 0 ;i<tamanho;i++){
-            if(list[i][1]!=null&&Integer.parseInt(list[i][1])!=i){
-                //System.out.println("O elemento da posicao"+i+" deveria ser realocado proximo a "+list[i][1]);
-                Object obj = null;
-                for(Object elem : positions){
-                    //System.out.println(elem);
-                    if (Integer.valueOf((Integer) elem)-Integer.valueOf(list[i][1])==0||Integer.valueOf((Integer) elem)-Integer.valueOf(list[i][1])%salto==0) { // se a posicao livre pertence ao salto em relacao a posicao certa
-                        if (Integer.valueOf((Integer) elem) >= Integer.valueOf(list[i][1])) { // se a posicao livre fica mais proximo da posicao certa
-                            if ((i - Integer.valueOf((Integer) elem) > 0)||i<Integer.valueOf(list[i][1])) {// se a posicao livre fica mais proximo da posicao certa em relacao ao elemento.
-                                //System.out.println("Entrou aqui");
-                                //System.out.println("Posicao    " + i + " Para " + (int) elem);
-                                list[(int) elem][0] = list[i][0];
-                                list[(int) elem][1] = list[i][1];
+        for (int i = 0; i<tamanho;i++){
+            Object obj=null;
+            for(Object position :positions){
+                if (list[i][1]!=null&&Integer.parseInt(list[i][1])!=i){
+                    if (list[i][2]!=null&&!list[i][2].isBlank()){
+                        for(int j = 0 ; j<Integer.parseInt(list[i][2]);j++){
+                            int newPosition = ((Integer.parseInt(list[i][1])+(j*salto))%tamanho);
+                            if (newPosition==(Integer)position){
+                                list[newPosition][0]=list[i][0];
+                                list[newPosition][1]=list[i][1];
+                                list[newPosition][2]=String.valueOf(j);
                                 list[i][0] = null;
                                 list[i][1] = null;
-                                obj = elem;
+                                list[i][2] = null;
+                                obj=position;
                                 break;
                             }
                         }
                     }
                 }
-                if (obj!=null){
-                    positions.remove(obj);
-                }
+            }
+            if(obj!=null){
+                positions.remove(obj);
             }
         }
     }
