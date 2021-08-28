@@ -3,16 +3,15 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LinearProbingIncrementBi {
+public class LinearProbingBidirectional {
     public String list [][];//frist position = value, second position = key reference;
     public int tamanho ;
-    public int salto;
     public String returnText;
 
-    public LinearProbingIncrementBi(int tamanho, int salto) {
+    public LinearProbingBidirectional(int tamanho) {
         this.list = new String[tamanho][3];
         this.tamanho = tamanho;
-        this.salto = salto;
+
     }
 
     private int getPosition(String value) {
@@ -165,7 +164,7 @@ public class LinearProbingIncrementBi {
     }
 
     private int getPositionRelative(int positionInitial,int multiplex){
-        int newPosition = (positionInitial+((multiplex*salto)*(int)Math.pow(-1,multiplex)))%tamanho;
+        int newPosition = (positionInitial+((1)*(int)Math.pow(-1,multiplex)))%tamanho;
 
         if (newPosition<0){
             newPosition+=tamanho;

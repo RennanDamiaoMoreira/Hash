@@ -5,9 +5,9 @@ Fazer um programa que, a partir de uma chave inteira k, faça inserção, busca 
 O tratamento de colisões deve ser feito segundo as seguintes técncicas:
 - Chaining. in progress -- complete
 - Linear Probing. --complete
-- Linear Probing fixed increment bidirecional. (Rennan)
+- Linear Probing fixed increment bidirecional. (Rennan) -- complete
 - Double hashing. (Vinícius)
-- Linear Probing duas direções.
+- Linear Probing duas direções.--complete
 - Linear Probing fixed increment unidirecional. -- complete
 
 Em todos os casos, na exclusão, não se pode usar a técnica de marcar a posição com "A" (Available), ou seja, tem que "arrumar" a tabela na hora da exclusão (ou remoção).

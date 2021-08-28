@@ -1,16 +1,17 @@
 package test;
 
 
-import model.LinearProbingIncrementUni;
+import model.LinearProbingBidirectional;
+import model.LinearProbingIncrementBi;
 
-public class LinearProbingIncramentUniTest {
+public class LinearProbingBidirectionalTest {
     public static void main(String[] args) {
-        LinearProbingIncrementUni teste = new LinearProbingIncrementUni(7,2);
+        LinearProbingBidirectional teste = new LinearProbingBidirectional(7);
         teste.gerarRepresentacao();
-        teste.add("1");
+        teste.add("Rennan");
         teste.gerarRepresentacao();
-        teste.add("21");teste.gerarRepresentacao();
-        teste.add("28");teste.gerarRepresentacao();
+        teste.add("Rennan");teste.gerarRepresentacao();
+        teste.add("nanneR");teste.gerarRepresentacao();
         teste.add("nnaeRn");teste.gerarRepresentacao();
 //        teste.add("Rennan");teste.gerarRepresentacao();
 //        teste.add("Rennan");teste.gerarRepresentacao();
