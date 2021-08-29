@@ -73,6 +73,7 @@ public class LinearProbingIncrementBi {
             return;
         }
         do {
+            returnText+="Posição ocupada, buscando a próxima\n";
             multiplex++;
             int newPosition =getPositionRelative(posicao,multiplex);
             if(posicoesPercorridas.contains(newPosition)){
