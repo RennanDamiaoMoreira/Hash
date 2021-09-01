@@ -165,7 +165,7 @@ public class LinearProbingBidirectional {
     }
 
     private int getPositionRelative(int positionInitial,int multiplex){
-        int newPosition = (positionInitial+((1)*(int)Math.pow(-1,multiplex)))%tamanho;
+        int newPosition = (positionInitial+(multiplex*(int)Math.pow(-1,multiplex)))%tamanho;
 
         if (newPosition<0){
             newPosition+=tamanho;

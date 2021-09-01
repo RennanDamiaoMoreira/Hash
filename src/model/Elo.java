@@ -59,7 +59,7 @@ public class Elo {
 
     public void delete(String value) {
 
-        if(this.getValue()==value){
+        if(this.getValue().equals(value)){
             this.getAnterior().setProximo(this.getProximo());
             System.out.println("Elemento removido");
         }
