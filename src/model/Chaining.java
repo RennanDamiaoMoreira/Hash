@@ -43,7 +43,7 @@ public class Chaining {
         if (list[key]==null){
             System.out.println("Elemento nao encontrado");
         }else{
-            if(list[key].getValue()==value){
+            if(list[key].getValue().equals(value)){
                 list[key]=list[key].getProximo();
                 System.out.println("Elemento removido");
             }else{

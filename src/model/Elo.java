@@ -60,6 +60,7 @@ public class Elo {
     public void delete(String value) {
 
         if(this.getValue().equals(value)){
+
             this.getAnterior().setProximo(this.getProximo());
             System.out.println("Elemento removido");
         }
@@ -74,8 +75,9 @@ public class Elo {
 
 
 
+
     public boolean search(String value) {
-        if (this.getValue()==value){
+        if (this.getValue().equals(value)){
             return true;
         }else{
             if(this.getProximo()!=null){
